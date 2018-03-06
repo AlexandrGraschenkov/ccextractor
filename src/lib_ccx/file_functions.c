@@ -428,8 +428,8 @@ size_t buffered_read_opt (struct ccx_demuxer *ctx, unsigned char *buffer, size_t
 		{
 			int i;
 			while (bytes > 0 && ctx->infd != -1 &&
-					((i = read(ctx->infd, buffer, bytes)) != 0 || ccx_options.live_stream ||
-					 (ccx_options.binary_concat && switch_to_next_file(ctx->parent, copied))))
+					((i = read(ctx->infd, buffer, bytes)) != 0 || ccx_options.live_stream/* ||
+					 (ccx_options.binary_concat && switch_to_next_file(ctx->parent, copied))*/))
 			{
 				if (terminate_asap)
 					break;
